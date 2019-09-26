@@ -1,1 +1,1 @@
-# stepik-homework
+# Stepik homework
