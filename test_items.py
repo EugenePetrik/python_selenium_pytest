@@ -15,5 +15,5 @@ def test_add_item_button_is_displayed(browser):
 
     assert add_item_button.is_displayed()
 
-# pytest --user_language=es --browser_name=chrome test_items.py
-# pytest --user_language=es --browser_name=firefox test_items.py
+# pytest --language=es --browser=chrome test_items.py
+# pytest --language=es --browser=firefox test_items.py
