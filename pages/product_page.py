@@ -30,3 +30,9 @@ class ProductPage(BasePage):
 
     def should_be_product_price_message(self):
         assert self.get_product_price() in self.get_product_price_message()
+
+    def should_not_success_message_present(self):
+        assert self.is_not_element_present(*ProductPageLocators.ITEM_ADDED_MESSAGE)
+
+    def should_not_success_message_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.ITEM_ADDED_MESSAGE)
