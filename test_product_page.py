@@ -102,6 +102,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     basket_page.should_items_count_equal(0)
     basket_page.should_visible_text_basket_empty()
 
+
 # pytest -s -v --tb=line --language=en test_product_page.py
 # pytest -s -v --tb=line --language=en test_product_page.py::test_guest_can_add_product_to_basket_with_discount
 # pytest -s -v --tb=line --language=en test_product_page.py::test_guest_should_see_login_link_on_product_page
