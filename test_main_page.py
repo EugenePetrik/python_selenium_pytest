@@ -22,5 +22,17 @@ def test_guest_should_see_login_link(browser):
 
     page.should_be_login_link()
 
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/"
+
+    page = MainPage(browser, link)
+    page.open()
+
+    page.got_to_basket_page()
+
+    page.should_basket_empty()
+
+
 # tb=line - выводить только одну строку из лога каждого упавшего теста
 # pytest -v --tb=line --language=en test_main_page.py
