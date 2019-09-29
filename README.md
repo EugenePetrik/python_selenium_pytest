@@ -1,1 +1,1 @@
-# Stepik homework
+# Python Project

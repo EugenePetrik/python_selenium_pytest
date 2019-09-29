@@ -8,7 +8,7 @@ import math
 
 
 class BasePage:
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, url, timeout=3):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
@@ -23,7 +23,7 @@ class BasePage:
             return False
         return True
 
-    # is_not_element_present: упадет, как только увидит искомый элемент. Не появился: успех, тест зеленый.
+    # is_not_element_present - упадет, как только увидит искомый элемент
     def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(
@@ -34,7 +34,7 @@ class BasePage:
 
         return False
 
-    # is_disappeared: будет ждать до тех пор, пока элемент не исчезнет.
+    # is_disappeared - будет ждать до тех пор, пока элемент не исчезнет
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException).until_not(
@@ -49,12 +49,12 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
-    def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
-
-    def got_to_basket_page(self):
+    def go_to_basket_page(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_ICON)
         link.click()
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), \
