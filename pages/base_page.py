@@ -56,13 +56,6 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.BASKET_ICON)
         link.click()
 
-    def get_basket_empty_text(self):
-        element = self.browser.find_element(*BasePageLocators.BASKET_EMPTY_TEXT)
-        return element.text
-
-    def should_basket_empty(self):
-        assert "Ваша корзина пуста" in self.get_basket_empty_text()
-
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
 
